@@ -1,0 +1,16 @@
+.header {
+  grid-area: h;
+  background-color: #3B5998;
+  display: flex;
+  align-items: center;  
+  }
+  
+.header img {
+  width: 45px;
+  margin: 4px;
+}
+.logoName {
+  color: white;
+  font-family: inherit;
+  padding-left: 50px;
+}

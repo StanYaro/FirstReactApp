@@ -1,0 +1,18 @@
+.app-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid; /*включаем гриды*/
+  grid-template-areas:
+  "h h" /* называем строки и колонки*/
+  "n c"; /*2 строки*/
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;  
+  /*grid-gap: 10px /*расстояние между элементами*/
+}
+
+.app-wrapper {
+    grid-area: c;
+    background-color: rgb(62, 62, 82);
+}
+
+
