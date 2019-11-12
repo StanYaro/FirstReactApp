@@ -11,17 +11,15 @@ import Setings from './components/Setings/Setings';
 
 
 const App = (props) => {
-  return (
+
+    return (
   <BrowserRouter>
     <div className='app-wrapper'>
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-      <Route /*exact*/ path='/dialogs' component={Dialogs} /> 
-      <Route /*exact*/ path='/profile' component={Profile}/>
-      <Route /*exact*/ path='/news' component={News}/> 
-      <Route /*exact*/ path='/music' component={Music}/> 
-      <Route /*exact*/ path='/setings' component={Setings}/>      
+      <Route /*exact*/ path='/dialogs' render = { () => <Dialogs dialogs={props.state.messagesPage.dialogs} messages={props.state.messagesPage.messages} />} />
+      <Route /*exact*/ path='/profile' render = { () => <Profile posts={props.state.profilePage.posts} />} /> 
       </div>
     </div>
   </BrowserRouter>
