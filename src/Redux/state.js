@@ -7,7 +7,7 @@ let state = {
       {id: '4', message: 'asgasdgasdgasd', likesCount: 3}
     ]
 },
-  messagesPage : {
+  dialogsPage: {
     dialogs : [
       {id: '1', name: 'Stan'},
       {id: '2', name: 'Nadin'},
@@ -25,7 +25,10 @@ let state = {
       {id: '6', message: 'Meaaaau'}
     ]
   }
-}  
+}
+  
+
+  
 
 
   export default state;
