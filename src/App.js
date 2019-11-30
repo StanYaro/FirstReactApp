@@ -11,7 +11,6 @@ import Setings from './components/Setings/Setings';
 
 
 const App = (props) => {
-
     return (
     <div className='app-wrapper'>
       <Header />
@@ -19,8 +18,7 @@ const App = (props) => {
       <div className='app-wrapper-content'>
 
       <Route /*exact*/ path='/dialogs' 
-         render = { () => <Dialogs 
-           state={props.state.dialogsPage} />} /> 
+         render = { () => <Dialogs store={props.store} />} /> 
 
       <Route /*exact*/ path='/profile' 
          render = { () => <Profile 

@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
+const SEND_MESSAGE = 'SEND_MESSAGE';
 
 let store = {
   _state : {
@@ -10,7 +12,7 @@ let store = {
         {id: '3', message: 'asdas', likesCount: 1113},
         {id: '4', message: 'asgasdgasdgasd', likesCount: 3}
       ],
-      newPostText: 'React is the best!'
+    newPostText: 'React is the best!'
   },
     dialogsPage: {
       dialogs : [
@@ -21,27 +23,26 @@ let store = {
         {id: '5', name: 'Jenia'},
         {id: '6', name: 'Kubik'}
     ],
-      messages : [
+    messages : [
         {id: '1', message: 'Hi'},
         {id: '2', message: 'Yo'},
         {id: '3', message: 'Bu bu ga ga'},
         {id: '4', message: 'JS is a power!'},
         {id: '5', message: 'Relax man!'},
         {id: '6', message: 'Meaaaau'}
-      ]
+    ],
+    newMessageBody: ""
     }
   },
   _callSubscriber() {
     console.log ('state changed');
   },
-
   getState() {
     return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
-  }, 
-  
+  },   
   dispatch(action) {
     if (action.type === ADD_POST) {
       let newPost = {
@@ -52,8 +53,16 @@ let store = {
       this._state.profilePage.posts.push(newPost);    
       this._state.profilePage.newPostText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+    } else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      this._state.dialogsPage.newMessageBody = action.body;
+      this._callSubscriber(this._state);
+    } else if (action.type === SEND_MESSAGE) {
+      let body =this._state.dialogsPage.newMessageBody;
+      this._state.dialogsPage.newMessageBody = '';
+      this._state.dialogsPage.messages.push({id:6, message: body});
       this._callSubscriber(this._state);
     }
   }
@@ -61,6 +70,9 @@ let store = {
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
 export const updateNewPostActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
+
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE })
+export const updateNewMessageBodyCreator = (body) => ({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
 
 
 export default store;

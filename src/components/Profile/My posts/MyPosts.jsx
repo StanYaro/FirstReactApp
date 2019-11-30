@@ -18,8 +18,7 @@ let onPostChange = () => {
   // props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text});
   let action = updateNewPostActionCreator(text);
   props.dispatch(action);
-}
- 
+} 
     return (
       <div className={s.postsblock}>
 
