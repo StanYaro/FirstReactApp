@@ -22,7 +22,7 @@ const App = (props) => {
          render = { () => <DialogsContainer store={props.store} />} /> 
 
       <Route path='/profile' 
-         render = { () => <Profile store={props.store} />} /> 
+         render = { () => <Profile />} /> 
       </div>
     </div>
   );
