@@ -9,6 +9,8 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setings from './components/Setings/Setings';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import Users from './components/Users/Users';
+
 
 
 const App = (props) => {
@@ -19,10 +21,14 @@ const App = (props) => {
       <div className='app-wrapper-content'>
 
       <Route path='/dialogs' 
-         render = { () => <DialogsContainer store={props.store} />} /> 
+        render = { () => <DialogsContainer store={props.store} />} /> 
 
       <Route path='/profile' 
-         render = { () => <Profile />} /> 
+        render = { () => <Profile />} /> 
+
+      <Route path='/users' 
+        render = { () => <UsersContainer />} /> 
+
       </div>
     </div>
   );
