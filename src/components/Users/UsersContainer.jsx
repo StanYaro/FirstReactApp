@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Users from './Users';
+import UsersAPIComponent from './UsersAPIComponent';
 import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setUsersTotalCountAC } from '../../Redux/Users-reducer';
 
 let mapStateToProps = (state) => {    //get object with all fresh data/props from store and push into components
@@ -33,4 +33,4 @@ let mapDispatchToProps = (dispatch) => {   //dispatch callbacks in store
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Users);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);
