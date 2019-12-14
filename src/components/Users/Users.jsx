@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/img/user.jpg';
 
+//clear - presentaional component
+
 let Users = (props) => {
     
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);

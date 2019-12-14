@@ -3,12 +3,14 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialState = {
   users : [],
   pageSize: 25,
   totalUsersCount: 0,
-  currentPage: 1
+  currentPage: 1,
+  isFetching: true  //loading animation-preloader
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -52,6 +54,10 @@ const usersReducer = (state = initialState, action) => {
       return {
             ...state, totalUsersCount: action.count
     }
+    case TOGGLE_IS_FETCHING:
+      return {
+            ...state, isFetching: action.isFetching
+    }
     default:
       return state;
   }
@@ -63,6 +69,7 @@ export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId})
 export const setUsersAC = (users) => ({ type: SET_USERS, users}) //get all users
 export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage}) //change curent page on click
 export const setUsersTotalCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})  //count and set all users on cite
+export const toggleisFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching})  //preloader animation
 
 
 export default usersReducer;
