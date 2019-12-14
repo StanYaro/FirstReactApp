@@ -5,3 +5,6 @@
     border: 3px solid rgb(69, 98, 159);
     box-shadow: 0 0 7px #666;
 }
+.selectedPage {
+    font-weight: bold
+}
