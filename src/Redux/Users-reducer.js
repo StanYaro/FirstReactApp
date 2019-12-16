@@ -64,12 +64,12 @@ const usersReducer = (state = initialState, action) => {
 }
 
 //action creators
-export const followAC = (userId) => ({ type: FOLLOW, userId })
-export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId})
-export const setUsersAC = (users) => ({ type: SET_USERS, users}) //get all users
-export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage}) //change curent page on click
-export const setUsersTotalCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})  //count and set all users on cite
-export const toggleisFetchingAC = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching})  //preloader animation
+export const follow = (userId) => ({ type: FOLLOW, userId })
+export const unfollow = (userId) => ({ type: UNFOLLOW, userId})
+export const setUsers = (users) => ({ type: SET_USERS, users}) //get all users
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage}) //change curent page on click
+export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})  //count and set all users on cite
+export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching})  //preloader animation
 
 
 export default usersReducer;
