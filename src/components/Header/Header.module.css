@@ -3,8 +3,8 @@
   background-color: #3B5998;
   display: flex;
   align-items: center;  
-  }
-  
+  justify-content: space-between;
+  }  
 .header img {
   width: 45px;
   margin: 4px;
@@ -13,4 +13,11 @@
   color: white;
   font-family: inherit;
   padding-left: 50px;
+}
+.loginBlock {
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.loginBlock a {
+  color: white;
 }
